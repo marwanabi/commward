@@ -1,0 +1,85 @@
+
+.rb_logo,.modal-img{
+  width:30%;
+  padding-bottom: 20px !important;
+}
+.center-class{
+  text-align: center !important;
+}
+.section-header{
+    padding-bottom: 20px !important;
+}
+.about-us p{
+  font-size: 1.5em !important;
+  line-height: 1.7 !important;
+}
+/*.member-details{
+  text-align: left !important;
+}*/
+.red-border-bottom:before {
+    width: 100%;
+    /*left: 0 !important;*/
+  }
+  .modal-text{
+    overflow: hidden;
+  text-align: left !important;
+  }
+  .modal-header{
+    border: none !important;
+  }
+/*.profile-pic{
+  margin: 0 !important;
+}*/
+.profile-pic img{
+  height: auto !important;
+}
+.client{
+  visibility: hidden;
+}
+.focus{
+  padding-bottom: 0 !important
+}
+.map{
+  background: white;
+}
+footer{
+  background-color: #353535;
+}
+.company-details{
+  padding-top: 30px !important
+}
+i{
+  color: white !important;
+      padding: 10px;
+}
+#clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div{
+	padding: 20px;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+  font-size: 3em;
+  font-weight: 900;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+.not-visible{
+  visibility: hidden;
+}
+.header-content-wrap {
+    background: rgba(68, 68, 68, 0.5) !important;
+  }
