@@ -83,3 +83,21 @@ i{
 .header-content-wrap {
     background: rgba(68, 68, 68, 0.5) !important;
   }
+
+  #timer {
+    font-weight: 100;
+    color: white;
+  }
+  #timer div {
+    display: inline-block;
+    min-width: 90px;
+    font-weight: 400;
+    font-size: 3em;
+  }
+  #timer div span {
+    color: white;
+    display: block;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 0 20px;
+  }

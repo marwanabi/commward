@@ -1,58 +1,23 @@
-$("#button").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#summit").offset().top
-    }, 2000);
-});
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
+function updateTimer() {
+  future  = Date.parse("September 3 , 2016 9:30:00");
+  now     = new Date();
+  diff    = future - now;
+
+  days  = Math.floor( diff / (1000*60*60*24) );
+  hours = Math.floor( diff / (1000*60*60) );
+  mins  = Math.floor( diff / (1000*60) );
+  secs  = Math.floor( diff / 1000 );
+
+  d = days;
+  h = hours - days  * 24;
+  m = mins  - hours * 60;
+  s = secs  - mins  * 60;
+
+  document.getElementById("timer")
+    .innerHTML =
+      '<div>' + d + '<span>Days</span></div>' +
+      '<div>' + h + '<span>Hours</span></div>' +
+      '<div>' + m + '<span>Minutes</span></div>' +
+      '<div>' + s + '<span>Seconds</span></div>' ;
 }
-
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var daysSpan = clock.querySelector('.days');
-  var hoursSpan = clock.querySelector('.hours');
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
-
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
-
-    daysSpan.innerHTML = t.days;
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-
-var deadline = new Date(Date.parse(new Date()) + 25 * 24 * 60 * 60 * 1000);
-initializeClock('clockdiv', deadline);
-
-
-
-jQuery(function($){
-$('.mapId').click(function() {
-$('div#gmap_canvas iframe').css('pointer-events','all')
-});
-$('.mapId').mouseleave(function(){
-$('div#gmap_canvas iframe').css('pointer-events','none');
-})
-
-});
+setInterval('updateTimer()', 1000 );
